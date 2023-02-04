@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}เพิ่มข้อมูล{% endblock %}
+
+{% block content %}
+    <h2 class="text-center"> เพิ่มข้อมูลพนักงานใหม่</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form | crispy }}
+        <button type="submit" class="btn btn-primary my-3">บันทึกข้อมูล</button>
+    </form>
+{% endblock %}
